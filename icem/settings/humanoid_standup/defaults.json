@@ -1,0 +1,14 @@
+{
+  "env": "HumanoidStandup",
+  "env_params": {
+  },
+  "forward_model_params": {
+    "num_parallel": 8
+  },
+  "rollout_params": {
+    "task_horizon": 1000
+  },
+  "number_of_rollouts": 5,
+  "training_iterations": 1,
+  "evaluation_rollouts": 0
+}

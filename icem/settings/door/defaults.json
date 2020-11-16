@@ -1,0 +1,15 @@
+{
+  "env": "Door",
+  "env_params": {
+    "shaped_reward": false
+  },
+  "forward_model_params": {
+    "num_parallel": 8
+  },
+  "rollout_params": {
+    "task_horizon": 200
+  },
+  "number_of_rollouts": 1,
+  "training_iterations": 1,
+  "evaluation_rollouts": 0
+}

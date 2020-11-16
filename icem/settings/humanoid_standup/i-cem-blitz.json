@@ -1,0 +1,13 @@
+{
+  "inherits_from": [
+    "defaults",
+    "..defaults.i-cem-blitz",
+    "..defaults.gt_default_env"
+  ],
+  "controller_params": {
+    "action_sampler_params": {
+       "noise_beta": 2.0
+    }
+  },
+  "model_dir": "results/icem/humanoid_standup/i-cem-blitz"
+}

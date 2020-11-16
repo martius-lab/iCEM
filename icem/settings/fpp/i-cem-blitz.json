@@ -1,0 +1,12 @@
+    "inherits_from": [
+        "defaults",
+        "..defaults.gt_default_env",
+	"..defaults.i-cem-blitz"
+    ],
+    "model_dir": "results/icem/fpp/i-cem-blitz",
+    "controller_params": {
+    	"action_sampler_params": {
+    	"noise_beta": 3.0
+    	}
+    }
+}

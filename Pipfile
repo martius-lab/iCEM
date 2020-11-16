@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+allogger = {editable = true, git = "git@github.com:s-bl/ALLogger.git", ref = "master"}
+colorednoise = "*"
+gym = "*"
+scipy = "*"
+forwardable = "*"
+sklearn = "*"
+tqdm = "*"
+seaborn = "*"
+matplotlib = "*"
+torch = "*"
+
+[requires]
+python_version = "3.8"

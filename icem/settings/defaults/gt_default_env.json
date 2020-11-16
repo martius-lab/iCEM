@@ -1,0 +1,28 @@
+{
+  "rollout_params": {
+    "render": false,
+    "render_initial": false,
+    "render_eval": false,
+    "record": false,
+    "only_final_reward": false,
+    "use_env_states": true
+  },
+  "forward_model": "ParallelGroundTruthModel",
+  "forward_model_params": {
+    "num_parallel": 8
+  },
+  "initial_controller": "none",
+  "initial_controller_params": {},
+  "initial_number_of_rollouts": 0,
+  "number_of_rollouts": 1,
+  "append_data": false,
+  "append_data_eval": false,
+  "training_iterations": 10,
+  "evaluation_rollouts": 0,
+  "checkpoints": {
+    "load": false,
+    "save": true,
+    "save_every_n_iter": 50,
+    "restart_every_n_iter": null
+  }
+}

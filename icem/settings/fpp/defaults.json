@@ -1,0 +1,18 @@
+{
+  "env": "FetchPickAndPlace",
+  "env_params": {
+    "sparse": false,
+    "threshold": 0.05,
+    "shaped_reward":  false
+  },
+  "forward_model": "ParallelGroundTruthModel",
+  "forward_model_params": {
+        "num_parallel": 8
+  },
+  "rollout_params": {
+    "task_horizon": 50,
+    "num_parallel": 16
+  },
+  "number_of_rollouts": 1,
+  "training_iterations": 1
+}

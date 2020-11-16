@@ -1,0 +1,16 @@
+{
+  "env": "HalfCheetah",
+  "env_params": {
+    "exclude_current_positions_from_observation": true,
+    "penalise_flipping": true
+  },
+  "forward_model_params": {
+    "num_parallel": 8
+  },
+  "rollout_params": {
+    "task_horizon": 1000
+  },
+  "number_of_rollouts": 1,
+  "training_iterations": 1,
+  "evaluation_rollouts": 0
+}

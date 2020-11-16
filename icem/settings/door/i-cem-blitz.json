@@ -1,0 +1,14 @@
+{
+  "inherits_from": [
+    "defaults",
+    "..defaults.i-cem-blitz",
+    "..defaults.gt_default_env"
+  ],
+  "controller_params": {
+    "horizon": 30,
+    "action_sampler_params": {
+       "noise_beta": 2.5
+    }
+  },
+  "model_dir": "results/icem/door/i-cem-fast"
+ }

@@ -1,0 +1,33 @@
+{
+    "append_data": false,
+    "append_data_eval": false,
+    "checkpoints": {
+        "load": false,
+        "restart_every_n_iter": null,
+        "save": true,
+        "save_every_n_iter": 1
+    },
+    "controller": "mpc-icem",
+    "controller_params": {
+        "num_simulated_trajectories": 40,
+        "factor_decrease_num": 1.25,
+        "horizon": 30,
+        "cost_along_trajectory": "sum",
+            "action_sampler_params": {
+                "alpha": 0.1,
+                "elites_size": 10,
+                "fraction_elites_reused": 0.3,
+                "init_std": 0.5,
+                "keep_previous_elites": true,
+                "noise_beta": 3.0,
+                "opt_iterations": 3,
+                "shift_elites_over_time": true,
+                "use_mean_actions": true
+            },
+            "do_visualize_plan": false,
+            "verbose": false
+    },
+    "initial_controller": "none",
+    "initial_controller_params": {},
+    "initial_number_of_rollouts": 0
+}
