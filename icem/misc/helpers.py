@@ -6,7 +6,7 @@ from collections import Mapping
 from copy import deepcopy
 from warnings import warn
 import ast
-
+import smart_settings
 import numpy as np
 import inspect
 from contextlib import contextmanager
@@ -15,6 +15,8 @@ import tqdm
 from abc import ABC, abstractmethod
 
 from functools import update_wrapper, partial
+
+JSON_SETTINGS_FILE = 'settings.json'
 
 
 class Decorator(ABC):
@@ -191,6 +193,22 @@ def resolve_params_hierarchy(init_params, verbose=True):
     return params
 
 
+def update_from_cmd_line():
+    def check_import_in_fixed_params(setting_dict):
+        if "fixed_params" in setting_dict:
+            if "__import__" in setting_dict['fixed_params']:
+                raise ImportError("Cannot import inside fixed params. Did you mean __import_promise__?")
+
+    params = smart_settings.load(sys.argv[1], pre_unpack_hooks=[check_import_in_fixed_params])
+    return params
+
+
+def save_settings_to_json(setting_dict, model_dir):
+    filename = os.path.join(model_dir, JSON_SETTINGS_FILE)
+    with open(filename, 'w') as file:
+        file.write(json.dumps(setting_dict, sort_keys=True, indent=4))
+
+
 def compute_and_log_reward_info(rollouts, logger, prefix="", exec_time=None):
     reward_info = {
         prefix + "mean_avg_reward": rollouts.mean_avg_reward,
@@ -207,7 +225,7 @@ def compute_and_log_reward_info(rollouts, logger, prefix="", exec_time=None):
         pass
     for k, v in reward_info.items():
         logger.log(v, key=k, to_tensorboard=True)
-        logger.info(f'{k}: {v}', to_stdout=True)
+        logger.info(f'{k}: {v}')
 
     return reward_info
 

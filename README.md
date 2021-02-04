@@ -8,6 +8,22 @@ Trajectory optimizers for model-based reinforcement learning, such as the Cross-
 ## Requirements
 Installed via the provided Pipfile with `pipenv install`, then `pipenv shell` to activate virtualenv
 ## Running Experiments
-Inside icem folder run `python icem.py settings/[env]/[json]`
+- Inside icem folder run `python icem.py settings/[env]/[json]`
+- To render all envs: set `"render": true` in `iCEM/icem/settings/defaults/gt_default_env.json`
+
+
+## iCEM improvements
+The iCEM controller file is located [here](https://github.com/martius-lab/iCEM/blob/main/icem/controllers/icem.py) and it contains the following additions:
+- **colored-noise**:  
+  point to  
+  code line
+  
+- **more**:  
+  explain
+  it
+  
+- **more**:  
+  explain
+  it
 
 

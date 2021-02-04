@@ -10,5 +10,5 @@
        "noise_beta": 2.5
     }
   },
-  "model_dir": "results/icem/door/i-cem-fast"
+  "model_dir": "results/icem/door/i-cem-blitz"
  }
