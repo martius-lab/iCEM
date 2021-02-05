@@ -4,14 +4,13 @@ import numpy as np
 import json
 import time
 import allogger
-from misc.helpers import recursive_objectify
-from cluster import update_params_from_cmdline, save_metrics_params, exit_for_resume
-from cluster.settings import save_settings_to_json
+from smart_settings.param_classes import recursive_objectify
 from controllers import controller_from_string
 from controllers.abstract_controller import ModelBasedController, NeedsPolicyController, TeacherController, \
     ParallelController
 from environments import env_from_string
-from misc.helpers import tqdm_context, resolve_params_hierarchy, compute_and_log_reward_info, update_reward_dict
+from misc.helpers import tqdm_context, resolve_params_hierarchy, compute_and_log_reward_info, \
+    update_reward_dict, update_from_cmd_line, save_settings_to_json
 from misc.initialization import CheckpointManager
 from models import forward_model_from_string
 from misc.rollout_utils import RolloutManager
@@ -81,7 +80,7 @@ class MainState:
 
 
 def main():
-    params = update_params_from_cmdline(verbose=False)
+    params = update_from_cmd_line()
     params = resolve_params_hierarchy(params)
     allogger.basic_configure(logdir=params.model_dir, default_outputs=['tensorboard'])
     allogger.utils.report_env(to_stdout=True)
@@ -239,7 +238,8 @@ def main():
     env.close()
     save_checkpoint(checkpoint_manager, final=True)
 
-    metrics = {}
+    print(reward_info_full)
+
     allogger.close()
 
 
