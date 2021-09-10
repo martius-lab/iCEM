@@ -8,7 +8,7 @@ Trajectory optimizers for model-based reinforcement learning, such as the Cross-
 ## Requirements
 Installed via the provided Pipfile with `pipenv install`, then `pipenv shell` to activate virtualenv
 ## Running Experiments
-- Inside icem folder run `python icem.py settings/[env]/[json]`
+- Inside icem folder run `python main.py settings/[env]/[json]`
 - To render all envs: set `"render": true` in `iCEM/icem/settings/defaults/gt_default_env.json`
 
 
